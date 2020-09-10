@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "app">
+    <h1>
+        Dear {{name}}, hello! <br>
+        {{num}}
+    </h1>
+    <button @click="helloClick">点我</button>
+    <br>
+    <input type="text" v-model="num"><button @click="num++">+</button>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app", // element, vue作用的标签
+        data:{
+            name: "Tony",
+            num: 0,
+        },
+        methods:{ // 这里不能写成 method, 结尾有s
+            helloClick(){
+                console.log("hello");
+            }
+        }
+    });
+</script>
+</body>
+</html>
